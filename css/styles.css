@@ -67,6 +67,7 @@ ul, ol, li {
     --font-weight-bold: 700;
     --font-weight-black: 900;
     --line-height-normal: 1.33;
+    --content-width-standard: 1300px;
 }
 
 /*
@@ -87,4 +88,51 @@ h2,
 h3 {
     font-family: var(--font-stack-secondary);
     text-transform: uppercase;
+}
+
+/*
+    ----------
+    Styling til header og tilhørende elementer
+    ----------
+*/
+
+.header {
+    height: 70px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    background-color: var(--white);
+}
+
+.header-inner {
+    height: 100%;
+    width: calc(100% - 20px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__home-link {
+    height: 100%;
+}
+
+.header__logo {
+    height: 100%;
+    width: auto;
+    fill: var(--black);
+}
+
+.main-nav-desktop {
+    display: none;
+}
+
+@media screen and (min-width: 839px) {
+
+    .main-nav-desktop {
+        display: flex;
+    }
+
+    .main-nav-mobile {
+        display: none;
+    }
 }
