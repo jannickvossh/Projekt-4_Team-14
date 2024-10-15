@@ -68,6 +68,7 @@ ul, ol, li {
     --font-weight-black: 900;
     --line-height-normal: 1.33;
     --content-width-standard: 1300px;
+    --transition-standard: 150ms cubic-bezier(.71,.12,.04,.81);
 }
 
 /*
@@ -81,6 +82,7 @@ body {
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
+    overflow-x: hidden;
 }
 
 h1,
@@ -101,11 +103,13 @@ h3 {
     padding: 15px 0;
     box-sizing: border-box;
     background-color: var(--white);
+    position: sticky;
+    top: 0;
 }
 
 .header-inner {
     height: 100%;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
     max-width: var(--content-width-standard);
     margin: 0 auto;
     display: flex;
@@ -127,11 +131,21 @@ h3 {
 }
 
 .main-nav-mobile {
-    display: none;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(100%);
+    transition: var(--transition-standard);
+    z-index: 2;
+    background-color: var(--white);
 }
 
-.main-nav-mobile.is-toggled {
-    display: flex;
+.main-nav-mobile--open {
+    transform: translateX(0);
+    pointer-events: initial;
 }
 
 .main-nav__items {
@@ -188,6 +202,32 @@ h3 {
     transform: translateY(calc(-50% + 8px));
 }
 
+.nav-close {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.nav-close__line {
+    height: 3px;
+    width: 30px;
+    background-color: var(--black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.nav-close__line:first-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.nav-close__line:last-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
 @media screen and (min-width: 839px) {
 
     .main-nav-desktop {
@@ -197,4 +237,27 @@ h3 {
     .nav-toggle {
         display: none;
     }
+}
+
+/*
+    ----------
+    Styling til footer og tilhørende elementer
+    ----------
+*/
+
+.footer {
+    background-color: var(--green);
+    padding: 40px 0;
+}
+
+.footer-inner {
+    height: 100%;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+}
+
+.footer__logo {
+    fill: var(--white);
+    height: 50px;
 }
