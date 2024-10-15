@@ -97,8 +97,8 @@ h3 {
 */
 
 .header {
-    height: 70px;
-    padding: 10px 0;
+    height: 80px;
+    padding: 15px 0;
     box-sizing: border-box;
     background-color: var(--white);
 }
@@ -126,13 +126,75 @@ h3 {
     display: none;
 }
 
+.main-nav-mobile {
+    display: none;
+}
+
+.main-nav-mobile.is-toggled {
+    display: flex;
+}
+
+.main-nav__items {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.main-nav-mobile .main-nav__items {
+    flex-direction: column;
+}
+
+.main-nav__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-toggle {
+    height: 100%;
+    width: 45px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger {
+    height: 100%;
+    width: 30px;
+    position: relative;
+}
+
+.hamburger__line {
+    height: 3px;
+    width: 30px;
+    background-color: var(--black);
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.hamburger__line:first-child {
+    transform: translateY(calc(-50% - 8px));
+}
+
+.hamburger__line:nth-child(2) {
+    transform: translateY(-50%);
+}
+
+.hamburger__line:last-child {
+    transform: translateY(calc(-50% + 8px));
+}
+
 @media screen and (min-width: 839px) {
 
     .main-nav-desktop {
         display: flex;
     }
 
-    .main-nav-mobile {
+    .nav-toggle {
         display: none;
     }
 }
