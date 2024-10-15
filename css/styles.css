@@ -1,0 +1,10 @@
+/* Basis-styling */
+
+body {
+    margin: 0;
+}
+
+ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
