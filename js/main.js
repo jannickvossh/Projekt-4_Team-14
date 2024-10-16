@@ -1,3 +1,5 @@
+/* Funktionalitet til at åbne og lukke mobilmenu */
+
 const mobileNavToggle = document.getElementById('mobile-nav-toggle');
 const mobileNavClose = document.getElementById('mobile-nav-close');
 const mobileNav = document.getElementById('mobile-nav');

@@ -94,6 +94,24 @@ h3 {
 
 /*
     ----------
+    Styling til genanvendelige elementer
+    ----------
+*/
+
+.some-icon-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.some-icon {
+    height: auto;
+    width: 32px;
+    color: inherit;
+}
+
+/*
+    ----------
     Styling til header og tilhørende elementer
     ----------
 */
