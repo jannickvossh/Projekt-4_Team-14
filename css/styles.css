@@ -63,6 +63,8 @@ ul, ol, li {
     --font-stack-primary: 'Sofia Sans', system-ui, sans-serif;
     --font-stack-secondary: 'Sofia Sans Condensed', system-ui, sans-serif;
     --font-size-normal: 16px;
+    --font-size-medium: 1.375rem;
+    --font-size-large: 1.875em;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --font-weight-black: 900;
@@ -82,6 +84,7 @@ body {
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
+    color: var(--black);
     overflow-x: hidden;
 }
 
@@ -159,6 +162,11 @@ h3 {
     transition: var(--transition-standard);
     z-index: 2;
     background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .main-nav-mobile--open {
@@ -180,6 +188,10 @@ h3 {
 .main-nav__link {
     text-decoration: none;
     color: inherit;
+}
+
+.main-nav-mobile .main-nav__link {
+    font-size: var(--font-size-medium);
 }
 
 .nav-toggle {
@@ -225,7 +237,7 @@ h3 {
     width: 40px;
     position: absolute;
     top: 20px;
-    right: 10px;
+    right: 15px;
     cursor: pointer;
 }
 
