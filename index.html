@@ -87,7 +87,27 @@
     </nav>
 
     <main class="main-content">
-        <div class="main-content-inner"></div>
+        <div class="main-content-inner">
+            <form action="post" class="form">
+                <div class="form__element">
+                    <label for="name">Navn</label>
+                    <input type="text" name="name" placeholder="Dit navn her...">
+                </div>
+                <div class="form__element">
+                    <label for="phone">Telefonnummer</label>
+                    <input type="text" name="phone" placeholder="Dit telefonnummer her...">
+                </div>
+                <div class="form__element">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Din email her...">
+                </div>
+                <div class="form__element">
+                    <label for="besked">Besked</label>
+                    <textarea name="besked" placeholder="Skriv en besked her..."></textarea>
+                </div>
+                <button type="submit" class="form__button">Tag kontakt</button>
+            </form>
+        </div>
     </main>
 
     <footer class="footer">
