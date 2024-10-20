@@ -65,6 +65,7 @@ ul, ol, li {
     --font-size-normal: 16px;
     --font-size-medium: 1.375rem;
     --font-size-large: 1.875em;
+    --font-size-huge: 2.25em;
     --font-size-small: 0.825rem;
     --font-weight-normal: 400;
     --font-weight-bold: 700;
@@ -96,6 +97,29 @@ h3 {
     font-family: var(--font-stack-secondary);
     font-weight: var(--font-weight-black);
     text-transform: uppercase;
+    margin: 0;
+}
+
+h1:has(+ p),
+h2:has(+ p),
+h3:has(+ p) {
+    margin-bottom: 0.25em;
+}
+
+h1 {
+    font-size: var(--font-size-huge);
+}
+
+p {
+    margin: 0;
+}
+
+p:has(+ p) {
+    margin-bottom: 0.75em;
+}
+
+p:has(+ *:not(p)) {
+    margin-bottom: 1.25em;
 }
 
 a {
@@ -135,6 +159,42 @@ input[type=button],
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button--arrow {
+    border-radius: var(--border-radius-normal) 0 0 var(--border-radius-normal);
+}
+
+.button--arrow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 40px;
+    background-color: var(--black);
+    border-radius: 0 var(--border-radius-normal) var(--border-radius-normal) 0;
+}
+
+.button--arrow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 20px);
+    transform: translate(-50%, -50%);
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid var(--orange);
+}
+
+.button--secondary-on-dark {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 
 input[type=text],
@@ -201,6 +261,7 @@ textarea {
     background-color: var(--white);
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 .header-inner {
@@ -351,6 +412,80 @@ textarea {
     .nav-toggle {
         display: none;
     }
+}
+
+/*
+    ----------
+    Styling til cards
+    ----------
+*/
+
+.card {
+    position: relative;
+}
+
+.card--highlighted {
+    height: 400px;
+}
+
+.card__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__overlay {
+    height: 100%;
+    width: 100%;
+    background-color: color-mix(in srgb, var(--black), transparent 70%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--white);
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.card-content-inner {
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+}
+
+.card__tag {
+    font-family: var(--font-stack-secondary);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+    padding: 0 1.5em;
+    height: 2em;
+    line-height: 2em;
+    background-color: var(--white);
+    color: var(--black);
+    display: inline-block;
+    border-radius: 1em;
+    margin: 0;
+}
+
+.card__tag:has(+ *) {
+    margin-bottom: 0.5em;
+}
+
+.card__title,
+.card__excerpt {
+    max-width: 700px;
+}
+
+.card__title {
+    font-size: var(--font-size-huge);
 }
 
 /*
