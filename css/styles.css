@@ -208,6 +208,11 @@ input[type=button],
     border-left: 7px solid var(--orange);
 }
 
+.button--secondary {
+    background-color: transparent;
+    border: 2px solid var(--black);
+}
+
 .button--secondary-on-dark {
     background-color: transparent;
     color: var(--white);
@@ -255,6 +260,30 @@ textarea {
 
 /*
     ----------
+    Styling til genanvendelige classes
+    ----------
+*/
+
+.background--black {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.background--white {
+    background-color: var(--white);
+}
+
+.background--green {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.background--orange {
+    background-color: var(--orange);
+}
+
+/*
+    ----------
     Styling til formularer og tilhørende elementer
     ----------
 */
@@ -270,6 +299,10 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.125rem;
+}
+
+.form__element--textarea {
+    grid-column: 1 / span all;
 }
 
 .form__element label {
@@ -563,6 +596,51 @@ textarea {
 
 .card__title {
     font-size: var(--font-size-huge);
+}
+
+/*
+    ----------
+    Styling til generelt indhold
+    ----------
+*/
+
+.section {
+    padding: 40px 0;
+}
+
+.section + .section {
+    padding-top: 0;
+}
+
+.section-inner {
+    height: 100%;
+    width: calc(100% - 40px);
+    max-width: var(--content-width-standard);
+    margin: 0 auto;
+}
+
+.content-box {
+    padding: 40px 20px;
+    max-width: 500px;
+}
+
+.content-box--wide {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content-box:has(+ *) {
+    padding-bottom: 70px;
+}
+
+.content-box + img {
+    position: relative;
+    top: -30px;
+    left: 30px;
+    height: 250px;
+    width: calc(100% - 20px);
+    max-width: 800px;
+    object-fit: cover;
 }
 
 /*
