@@ -232,6 +232,10 @@ textarea {
     box-sizing: border-box;
 }
 
+textarea {
+    resize: none;
+}
+
 .language-selector {
     display: flex;
     align-items: center;
@@ -335,7 +339,7 @@ textarea {
 }
 
 .form__element--textarea {
-    grid-column: 1 / span all;
+    grid-column: 1 / span 2;
 }
 
 .form__element label {
