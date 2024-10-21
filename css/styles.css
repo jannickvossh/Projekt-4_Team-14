@@ -261,7 +261,8 @@ textarea {
 .members {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    row-gap: 40px;
+    column-gap: 20px;
 }
 
 .member {
@@ -712,10 +713,15 @@ textarea {
     display: block;
 }
 
+.footer__logo:has(+ *) {
+    margin-bottom: 20px;
+}
+
 .footer-row {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    row-gap: 40px;
+    column-gap: 70px;
 }
 
 .footer-row:has(+ .footer-row) {
