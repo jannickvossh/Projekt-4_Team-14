@@ -178,6 +178,11 @@ input[type=button],
     box-sizing: border-box;
     text-decoration: none;
     display: inline-block;
+    transition: background-color var(--transition-standard);
+}
+
+.button:hover {
+    background-color: color-mix(in srgb, var(--orange), var(--black) 10%);
 }
 
 .button--arrow {
@@ -211,12 +216,26 @@ input[type=button],
 .button--secondary {
     background-color: transparent;
     border: 2px solid var(--black);
+    transition: background-color var(--transition-standard);
+    transition-property: background-color, color;
+}
+
+.button--secondary:hover {
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .button--secondary-on-dark {
     background-color: transparent;
     color: var(--white);
     border: 2px solid var(--white);
+    transition: background-color var(--transition-standard);
+    transition-property: background-color, color;
+}
+
+.button--secondary-on-dark:hover {
+    background-color: var(--white);
+    color: var(--black);
 }
 
 input[type=text],
