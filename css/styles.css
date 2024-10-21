@@ -758,7 +758,7 @@ textarea {
     top: calc(100% + 0.075em);
     left: 0;
     height: 1px;
-    width: 50px;
+    width: 65%;
     background-color: var(--white);
     opacity: 0.3;
     transition: all var(--transition-standard);
