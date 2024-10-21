@@ -73,7 +73,7 @@ ul, ol, li {
     --line-height-normal: 1.33;
     --line-height-heading: 1.125;
     --content-width-standard: 1300px;
-    --transition-standard: 150ms cubic-bezier(.71,.12,.04,.81);
+    --transition-standard: 150ms ease-in-out;
     --border-radius-normal: 8px;
 }
 
