@@ -258,6 +258,38 @@ textarea {
     background-color: var(--orange);
 }
 
+.members {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.member {
+    text-decoration: none;
+}
+
+.member__image {
+    height: 80px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.member__image + .member__name {
+    margin-top: 0.5em;
+}
+
+.member__name {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+}
+
+@media screen and (min-width: 839px) {
+
+    .members {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /*
     ----------
     Styling til genanvendelige classes
@@ -610,6 +642,18 @@ textarea {
 
 .section + .section {
     padding-top: 0;
+}
+
+.section.section--has-background {
+    padding-top: 40px;
+}
+
+.section--has-background + .section {
+    padding-top: 40px;
+}
+
+.section--align-center {
+    text-align: center;
 }
 
 .section-inner {
