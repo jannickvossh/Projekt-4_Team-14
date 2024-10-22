@@ -257,6 +257,11 @@ textarea:focus::placeholder {
     color: transparent;
 }
 
+input[type=text]::placeholder,
+textarea::placeholder {
+    color: color-mix(in srgb, var(--black), transparent 35%);
+}
+
 textarea {
     resize: none;
 }
