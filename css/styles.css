@@ -270,14 +270,10 @@ textarea {
 .language-selector__language {
     margin: 0;
     cursor: pointer;
-}
-
-.language-selector__language--current-language {
-    font-weight: var(--font-weight-black);
     position: relative;
 }
 
-.language-selector__language--current-language::after {
+.language-selector__language::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -285,6 +281,21 @@ textarea {
     height: 5px;
     width: 100%;
     background-color: var(--orange);
+    transition: transform var(--transition-standard);
+    transform-origin: top center;
+    transform: scaleY(0);
+}
+
+.language-selector__language:hover::after {
+    transform: scaleY(1);
+}
+
+.language-selector__language--current-language {
+    font-weight: var(--font-weight-black);
+}
+
+.language-selector__language--current-language::after {
+    transform: scaleY(1);
 }
 
 .members {
@@ -474,13 +485,10 @@ textarea {
     text-transform: uppercase;
     text-decoration: none;
     color: inherit;
-}
-
-.main-nav__link--current-page {
     position: relative;
 }
 
-.main-nav__link--current-page::after {
+.main-nav__link::after {
     content: '';
     position: absolute;
     top: calc(100% + 1px);
@@ -488,6 +496,17 @@ textarea {
     height: 5px;
     width: 100%;
     background-color: var(--orange);
+    transition: transform var(--transition-standard);
+    transform-origin: top center;
+    transform: scaleY(0);
+}
+
+.main-nav__link:hover::after {
+    transform: scaleY(1);
+}
+
+.main-nav__link--current-page::after {
+    transform: scaleY(1);
 }
 
 .main-nav-mobile .main-nav__link {
