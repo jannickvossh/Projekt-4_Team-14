@@ -103,6 +103,7 @@ body {
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
+    background-color: color-mix(in srgb, var(--orange), transparent 90%);
     color: var(--black);
     overflow-x: hidden;
 }
@@ -357,6 +358,7 @@ textarea {
 
 .background--white {
     background-color: var(--white);
+    color: var(--black);
 }
 
 .background--green {
@@ -366,6 +368,7 @@ textarea {
 
 .background--orange {
     background-color: var(--orange);
+    color: var(--black);
 }
 
 /*
@@ -781,6 +784,10 @@ textarea {
 }
 
 @media screen and (min-width: 839px) {
+
+    .section.section--has-background:has(.content-box):has(.content-box + img) {
+        padding-bottom: 70px;
+    }
     
     .section-inner {
         flex-direction: row;
