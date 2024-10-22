@@ -59,6 +59,7 @@ ul, ol, li {
     --black: #2A292C;
     --white: #FFFFFF;
     --orange: #FAAB23;
+    --pale-orange: #FEF6E8;
     --green: #009926;
     --font-stack-primary: 'Sofia Sans', system-ui, sans-serif;
     --font-stack-secondary: 'Sofia Sans Condensed', system-ui, sans-serif;
@@ -103,7 +104,7 @@ body {
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
-    background-color: color-mix(in srgb, var(--orange), transparent 90%);
+    background-color: var(--pale-orange);
     color: var(--black);
     overflow-x: hidden;
 }
@@ -206,7 +207,7 @@ input[type=button],
     content: '';
     position: absolute;
     top: 50%;
-    left: calc(100% + 20px);
+    left: calc(100% + 21px);
     transform: translate(-50%, -50%);
     width: 0; 
     height: 0; 
@@ -227,6 +228,17 @@ input[type=button],
     color: var(--white);
 }
 
+.button--secondary.button--arrow::before {
+    background-color: transparent;
+    border: 2px solid var(--black);
+    top: -2px;
+}
+
+.button--secondary.button--arrow::after {
+    border-left: 7px solid var(--black);
+    left: calc(100% + 22px);
+}
+
 .button--secondary-on-dark {
     background-color: transparent;
     color: var(--white);
@@ -240,11 +252,21 @@ input[type=button],
     color: var(--black);
 }
 
+.button--secondary-on-dark.button--arrow::before {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    top: -2px;
+}
+
+.button--secondary-on-dark.button--arrow::after {
+    border-left: 7px solid var(--white);
+    left: calc(100% + 22px);
+}
+
 input[type=text],
 textarea {
     appearance: none;
     -webkit-appearance: none;
-    border: none;
     border-radius: var(--border-radius-normal);
     border: 1px solid var(--black);
     padding: 0.5rem;
