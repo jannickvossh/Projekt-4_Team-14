@@ -938,6 +938,6 @@ textarea {
 @media screen and (min-width: 839px) {
 
     .footer-row {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
