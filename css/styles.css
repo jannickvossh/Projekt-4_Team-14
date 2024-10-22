@@ -775,6 +775,39 @@ textarea {
     }
 }
 
+@media screen and (min-width: 839px) {
+    
+    .section-inner {
+        flex-direction: row;
+    }
+
+    .section:nth-child(odd) .section-inner {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    .content-box {
+        padding: 40px 60px 40px 20px;
+    }
+
+    .section:nth-child(odd) .content-box {
+        padding: 40px 20px 40px 60px;
+    }
+
+    .content-box + img {
+        top: 30px;
+        left: -30px;
+    }
+
+    .section:not(.section--has-background):has(+ .section) {
+        padding-bottom: 80px;
+    }
+    
+    .section:nth-child(odd) .content-box + img {
+        left: 30px;
+    }
+}
+
 /*
     ----------
     Styling til footer og tilhørende elementer
