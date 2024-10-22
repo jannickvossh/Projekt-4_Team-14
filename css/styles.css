@@ -120,7 +120,7 @@ h3 {
 h1:has(+ p),
 h2:has(+ p),
 h3:has(+ p) {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.375em;
 }
 
 h1 {
@@ -136,7 +136,7 @@ p:has(+ p) {
 }
 
 p:has(+ *:not(p)) {
-    margin-bottom: 1.25em;
+    margin-bottom: 1.375em;
 }
 
 a {
@@ -311,6 +311,14 @@ textarea {
 .member__name {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
+}
+
+* + .grid-carousel {
+    margin-top: 40px;
+}
+
+.grid-carousel:has(+ *) {
+    margin-bottom: 40px;
 }
 
 @media screen and (min-width: 839px) {
