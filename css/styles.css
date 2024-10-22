@@ -798,11 +798,11 @@ textarea {
         align-items: flex-start;
     }
 
-    .content-box {
+    .content-box:not(.content-box--wide) {
         padding: 40px 60px 40px 20px;
     }
 
-    .section:nth-child(odd) .content-box {
+    .section:nth-child(odd) .content-box:not(.content-box--wide) {
         padding: 40px 20px 40px 60px;
     }
 
