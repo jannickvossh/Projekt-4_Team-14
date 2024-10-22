@@ -162,6 +162,11 @@ a {
     height: auto;
     width: 32px;
     display: block;
+    transition: fill var(--transition-standard);
+}
+
+.some-link:hover .some-icon {
+    fill: var(--orange);
 }
 
 button,
