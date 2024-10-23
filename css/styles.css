@@ -357,11 +357,11 @@ textarea {
     font-weight: var(--font-weight-bold);
 }
 
-* + .grid-carousel {
+* + .grid-slideshow {
     margin-top: 40px;
 }
 
-.grid-carousel:has(+ *) {
+.grid-slideshow:has(+ *) {
     margin-bottom: 40px;
 }
 
@@ -670,7 +670,7 @@ textarea {
 
 /*
     ----------
-    Styling til storys
+    Styling til stories
     ----------
 */
 
@@ -743,6 +743,12 @@ textarea {
 .story__title {
     font-size: var(--font-size-huge);
 }
+
+/*
+    ----------
+    Styling til cards
+    ----------
+*/
 
 /*
     ----------
