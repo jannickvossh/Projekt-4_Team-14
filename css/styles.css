@@ -8,7 +8,10 @@ body {
     margin: 0;
 }
 
-ul, ol, li {
+ul,
+ol,
+li,
+blockquote {
     margin: 0;
     padding: 0;
 }
@@ -119,14 +122,22 @@ h3 {
     margin: 0;
 }
 
-h1:has(+ p),
-h2:has(+ p),
-h3:has(+ p) {
+h1:has(+ *),
+h2:has(+ *),
+h3:has(+ *) {
     margin-bottom: 0.375em;
 }
 
 h1 {
     font-size: var(--font-size-huge);
+}
+
+h2 {
+    font-size: var(--font-size-large);
+}
+
+h3 {
+    font-size: var(--font-size-medium);
 }
 
 p {
@@ -146,27 +157,42 @@ a {
     color: inherit;
 }
 
-/*
-    ----------
-    Styling til genanvendelige elementer
-    ----------
-*/
-
-.some-icon-wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
+blockquote {
+    font-style: italic;
 }
 
-.some-icon {
-    height: auto;
-    width: 32px;
-    display: block;
-    transition: fill var(--transition-standard);
+blockquote p:first-child::before {
+    content: '“';
 }
 
-.some-link:hover .some-icon {
-    fill: var(--orange);
+blockquote p:last-child::after {
+    content: '”';
+}
+
+input[type=text],
+textarea {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--border-radius-normal);
+    border: 1px solid var(--black);
+    padding: 0.5rem;
+    font-family: var(--font-stack-primary);
+    font-size: var(--font-size-normal);
+    box-sizing: border-box;
+}
+
+input[type=text]:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+input[type=text]::placeholder,
+textarea::placeholder {
+    color: color-mix(in srgb, var(--black), transparent 35%);
+}
+
+textarea {
+    resize: none;
 }
 
 button,
@@ -214,8 +240,8 @@ input[type=button],
     top: 50%;
     left: calc(100% + 21px);
     transform: translate(-50%, -50%);
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 7px solid var(--orange);
@@ -268,30 +294,27 @@ input[type=button],
     left: calc(100% + 22px);
 }
 
-input[type=text],
-textarea {
-    appearance: none;
-    -webkit-appearance: none;
-    border-radius: var(--border-radius-normal);
-    border: 1px solid var(--black);
-    padding: 0.5rem;
-    font-family: var(--font-stack-primary);
-    font-size: var(--font-size-normal);
-    box-sizing: border-box;
+/*
+    ----------
+    Styling til genanvendelige elementer
+    ----------
+*/
+
+.some-icon-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-input[type=text]:focus::placeholder,
-textarea:focus::placeholder {
-    color: transparent;
+.some-icon {
+    height: auto;
+    width: 32px;
+    display: block;
+    transition: fill var(--transition-standard);
 }
 
-input[type=text]::placeholder,
-textarea::placeholder {
-    color: color-mix(in srgb, var(--black), transparent 35%);
-}
-
-textarea {
-    resize: none;
+.some-link:hover .some-icon {
+    fill: var(--orange);
 }
 
 .language-selector {
@@ -357,11 +380,11 @@ textarea {
     font-weight: var(--font-weight-bold);
 }
 
-* + .grid-slideshow {
+* + .slideshow {
     margin-top: 40px;
 }
 
-.grid-slideshow:has(+ *) {
+.slideshow:has(+ *) {
     margin-bottom: 40px;
 }
 
@@ -750,6 +773,48 @@ textarea {
     ----------
 */
 
+.cards {
+    padding: 20px 0;
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+}
+
+.card {
+    padding: 20px;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.card__title:has(+ .card__image) {
+    margin-bottom: 20px;
+}
+
+.card__image {
+    height: auto;
+    width: calc(100% + 40px);
+    aspect-ratio: 16 / 9;
+    position: relative;
+    transform: translateX(-20px);
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding-top: 20px;
+}
+
+.card__quotee {
+    font-family: var(--font-stack-secondary);
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-medium);
+    text-transform: uppercase;
+}
+
+.card__quotee:has(+ *) {
+    margin-bottom: 0.5em;
+}
+
 /*
     ----------
     Styling til generelt indhold
@@ -781,11 +846,14 @@ textarea {
     width: calc(100% - 40px);
     max-width: var(--content-width-standard);
     margin: 0 auto;
+}
+
+.section-inner:has(.content-box) {
     display: flex;
     flex-direction: column;
 }
 
-.section:nth-child(odd) .section-inner {
+.section:has(.content-box):nth-child(odd) .section-inner {
     align-items: flex-end;
 }
 
@@ -844,7 +912,7 @@ textarea {
         padding-bottom: 70px;
     }
     
-    .section-inner {
+    .section-inner:has(.content-box) {
         flex-direction: row;
     }
 
