@@ -703,7 +703,6 @@ input[type=button],
 
 .accordion {
     position: relative;
-    cursor: pointer;
 }
 
 .accordion + .accordion {
@@ -713,6 +712,11 @@ input[type=button],
 .accordion-header {
     padding: 40px 20px;
     max-width: 800px;
+    cursor: pointer;
+}
+
+.accordion-header:has(img) {
+    padding-top: 20px;
 }
 
 .accordion--expanded .accordion-header {
@@ -725,9 +729,34 @@ input[type=button],
     gap: 20px;
 }
 
+.accordion__title h3 {
+    margin: 0;
+}
+
 .accordion__title img {
     height: 60px;
     width: auto;
+}
+
+.accordion__toggle {
+    content: '';
+    position: relative;
+    margin-right: 10px;
+    margin-left: auto;
+    width: 0;
+    height: 0;
+    border-top: 9px solid var(--black);
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    transition: transform var(--transition-standard);
+}
+
+.accordion__toggle--light {
+    border-top-color: var(--white);
+}
+
+.accordion--expanded .accordion__toggle {
+    transform: rotate(180deg);
 }
 
 .accordion__title:has(+ .accordion__description) {

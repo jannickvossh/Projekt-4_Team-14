@@ -24,7 +24,7 @@ if (document.querySelectorAll('.accordion').length > 0) {
 }
 
 for (let i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener('click', () => {
+    accordions[i].firstElementChild.addEventListener('click', () => {
         if (!accordions[i].classList.contains('accordion--expanded')) {
             accordions[i].classList.add('accordion--expanded');
         } else {
