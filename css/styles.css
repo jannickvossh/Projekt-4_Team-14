@@ -365,6 +365,28 @@ textarea {
     margin-bottom: 40px;
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.325;
+}
+
+.overlay--black {
+    background-color: var(--black);
+}
+
+.overlay--green {
+    background-color: var(--green);
+}
+
+.overlay--orange {
+    background-color: var(--orange);
+}
+
 @media screen and (min-width: 839px) {
 
     .members {
@@ -767,7 +789,7 @@ textarea {
 
 .content-box {
     padding: 40px 20px;
-    max-width: 700px;
+    max-width: 600px;
 }
 
 .content-box--wide {
@@ -820,7 +842,7 @@ textarea {
         flex-direction: row;
     }
 
-    .section:nth-child(odd) .section-inner {
+    .section:has(.content-box):nth-child(odd) .section-inner {
         flex-direction: row-reverse;
         align-items: flex-start;
     }
@@ -836,6 +858,7 @@ textarea {
     .content-box + img {
         top: 30px;
         left: -30px;
+        min-width: 400px;
     }
 
     .section:not(.section--has-background):has(+ .section) {
@@ -845,6 +868,50 @@ textarea {
     .section:nth-child(odd) .content-box + img {
         left: 30px;
     }
+}
+
+/*
+    ----------
+    Styling til hero og tilhørende elementer
+    ----------
+*/
+
+.hero {
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+.hero__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero-inner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: var(--content-width-standard);
+    max-width: calc(100% - 40px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--white);
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.hero__title,
+.hero__text {
+    max-width: 800px;
 }
 
 /*
