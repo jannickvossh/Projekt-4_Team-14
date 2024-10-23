@@ -21,14 +21,14 @@ mobileNavClose.addEventListener('click', () => {
 let accordions;
 if (document.querySelectorAll('.accordion').length > 0) {
     accordions = document.querySelectorAll('.accordion');
-}
 
-for (let i = 0; i < accordions.length; i++) {
-    accordions[i].firstElementChild.addEventListener('click', () => {
-        if (!accordions[i].classList.contains('accordion--expanded')) {
-            accordions[i].classList.add('accordion--expanded');
-        } else {
-            accordions[i].classList.remove('accordion--expanded');
-        }
-    });
+    for (let i = 0; i < accordions.length; i++) {
+        accordions[i].firstElementChild.addEventListener('click', () => {
+            if (!accordions[i].classList.contains('accordion--expanded')) {
+                accordions[i].classList.add('accordion--expanded');
+            } else {
+                accordions[i].classList.remove('accordion--expanded');
+            }
+        });
+    }
 }
