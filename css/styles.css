@@ -693,6 +693,44 @@ input[type=button],
 
 /*
     ----------
+    Styling til accordions
+    ----------
+*/
+
+.accordions {
+    padding: 20px 0;
+}
+
+.accordion {
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-header {
+    padding: 40px 20px;
+    max-width: 800px;
+}
+
+.accordion--expanded .accordion-header {
+    padding-bottom: 120px;
+}
+
+.accordion-content {
+    position: relative;
+    left: 20px;
+    display: none;
+}
+
+.accordion--expanded .accordion-content {
+    display: block;
+}
+
+.accordion-header + .accordion-content {
+    margin-top: -105px;
+}
+
+/*
+    ----------
     Styling til stories
     ----------
 */
@@ -784,6 +822,13 @@ input[type=button],
     padding: 20px;
     min-width: 300px;
     max-width: 400px;
+}
+
+.card__title {
+    font-family: var(--font-stack-secondary);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
 }
 
 .card__title:has(+ .card__image) {
