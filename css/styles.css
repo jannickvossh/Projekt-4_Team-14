@@ -670,25 +670,25 @@ textarea {
 
 /*
     ----------
-    Styling til cards
+    Styling til storys
     ----------
 */
 
-.card {
+.story {
     position: relative;
 }
 
-.card--highlighted {
+.story--highlighted {
     height: 400px;
 }
 
-.card__image {
+.story__image {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.card__overlay {
+.story__overlay {
     height: 100%;
     width: 100%;
     background-color: color-mix(in srgb, var(--black), transparent 70%);
@@ -697,7 +697,7 @@ textarea {
     left: 0;
 }
 
-.card-content {
+.story-content {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -710,13 +710,13 @@ textarea {
     align-items: center;
 }
 
-.card-content-inner {
+.story-content-inner {
     width: calc(100% - 40px);
     max-width: var(--content-width-standard);
     margin: 0 auto;
 }
 
-.card__tag {
+.story__tag {
     font-family: var(--font-stack-secondary);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-black);
@@ -731,16 +731,16 @@ textarea {
     margin: 0;
 }
 
-.card__tag:has(+ *) {
+.story__tag:has(+ *) {
     margin-bottom: 0.5em;
 }
 
-.card__title,
-.card__excerpt {
+.story__title,
+.story__excerpt {
     max-width: 700px;
 }
 
-.card__title {
+.story__title {
     font-size: var(--font-size-huge);
 }
 
