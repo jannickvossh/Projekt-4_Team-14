@@ -803,6 +803,7 @@ input[type=button],
     gap: 20px;
     overflow-x: scroll;
     height: 300px;
+    scroll-snap-type: x mandatory;
 }
 
 .story {
@@ -810,6 +811,7 @@ input[type=button],
     width: 350px;
     min-width: 350px;
     position: relative;
+    scroll-snap-align: start;
 }
 
 .story__img {
@@ -914,12 +916,14 @@ input[type=button],
     display: flex;
     gap: 20px;
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .card {
     padding: 20px;
     min-width: 300px;
     max-width: 400px;
+    scroll-snap-align: start;
 }
 
 .card__title {
