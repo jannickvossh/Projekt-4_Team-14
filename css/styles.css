@@ -842,9 +842,13 @@ input[type=button],
 
 .story {
     height: 300px;
+    max-width: 560px;
+    position: relative;
+}
+
+.stories.layout-carousel .story {
     width: 350px;
     min-width: 350px;
-    position: relative;
     scroll-snap-align: start;
 }
 
