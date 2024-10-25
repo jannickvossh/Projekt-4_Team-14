@@ -1021,6 +1021,11 @@ input[type=button],
     text-align: center;
 }
 
+.section--align-center .section-inner > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .section-inner {
     height: 100%;
     width: calc(100% - 40px);
