@@ -81,7 +81,7 @@ blockquote {
     --border-radius-normal: 8px;
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 600px) {
 
     :root {
         --font-size-large: 1.875rem;
@@ -89,7 +89,7 @@ blockquote {
     }
 }
 
-@media screen and (min-width: 839px) {
+@media screen and (min-width: 840px) {
 
     :root {
         --font-size-huge: 2.25rem;
@@ -410,7 +410,7 @@ input[type=button],
     background-color: var(--orange);
 }
 
-@media screen and (min-width: 839px) {
+@media screen and (min-width: 840px) {
 
     .members {
         grid-template-columns: repeat(3, 1fr);
@@ -474,7 +474,7 @@ input[type=button],
     width: 100%;
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 600px) {
 
     .form {
         grid-template-columns: 1fr 1fr;
@@ -482,6 +482,40 @@ input[type=button],
 
     .form__element--textarea {
         grid-column: 1 / span 2;
+    }
+}
+
+/*
+    ----------
+    Styling til layouts
+    ----------
+*/
+
+.layout-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.layout-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+@media screen and (min-width: 600px) {
+
+    .col-2,
+    .col-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 840px) {
+
+    .col-3 {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -676,7 +710,7 @@ input[type=button],
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-@media screen and (min-width: 839px) {
+@media screen and (min-width: 840px) {
 
     .main-nav-desktop {
         display: flex;
@@ -799,11 +833,11 @@ input[type=button],
 }
 
 .stories {
-    display: flex;
-    gap: 20px;
-    overflow-x: scroll;
     height: 300px;
-    scroll-snap-type: x mandatory;
+}
+
+.stories.layout-carousel {
+    height: 300px;
 }
 
 .story {
@@ -913,16 +947,15 @@ input[type=button],
 
 .cards {
     padding: 20px 0;
-    display: flex;
-    gap: 20px;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
 }
 
 .card {
     padding: 20px;
+    max-width: 560px;
+}
+
+.cards.layout-carousel .card {
     min-width: 300px;
-    max-width: 400px;
     scroll-snap-align: start;
 }
 
@@ -1044,7 +1077,7 @@ input[type=button],
     right: 20px;
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 600px) {
 
     .content-box {
         padding-right: 30px;
@@ -1064,7 +1097,7 @@ input[type=button],
     }
 }
 
-@media screen and (min-width: 839px) {
+@media screen and (min-width: 840px) {
 
     .section.section--has-background:has(.content-box):has(.content-box + img),
     .section.section--has-background:has(.content-box):has(.content-box + .stories),
@@ -1233,14 +1266,14 @@ input[type=button],
     fill: var(--white);
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 600px) {
 
     .footer-row {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (min-width: 839px) {
+@media screen and (min-width: 840px) {
 
     .footer-row {
         grid-template-columns: repeat(4, 1fr);
