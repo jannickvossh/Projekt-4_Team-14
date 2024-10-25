@@ -157,6 +157,32 @@ a {
     color: inherit;
 }
 
+.regular-ul {
+    list-style: none;
+}
+
+.regular-ul li {
+    position: relative;
+    left: calc(20px + 1ch);
+    padding-right: calc(20px + 1ch);
+}
+
+.regular-ul li + li {
+    margin-top: 1em;
+}
+
+.regular-ul li::before {
+    content: '';
+    height: 15px;
+    width: 15px;
+    background-color: var(--orange);
+    position: absolute;
+    top: 50%;
+    left: calc((20px + 1ch) * -1);
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
 blockquote {
     font-style: italic;
 }
