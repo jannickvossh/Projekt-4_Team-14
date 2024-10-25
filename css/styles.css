@@ -832,10 +832,6 @@ input[type=button],
     margin: 0;
 }
 
-.stories {
-    height: 300px;
-}
-
 .stories.layout-carousel {
     height: 300px;
 }
@@ -1079,6 +1075,10 @@ input[type=button],
 .section:nth-child(odd) .content-box + .cards {
     left: auto;
     right: 20px;
+}
+
+.section-inner p {
+    max-width: 800px;
 }
 
 @media screen and (min-width: 600px) {
