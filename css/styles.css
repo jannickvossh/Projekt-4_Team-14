@@ -367,7 +367,7 @@ input[type=button],
 
 .member__image {
     height: 80px;
-    width: 200px;
+    width: 180px;
     object-fit: contain;
 }
 
