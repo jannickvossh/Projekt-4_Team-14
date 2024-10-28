@@ -1225,9 +1225,9 @@ input[type=button],
 }
 
 .article-hero {
-    width: calc(100% - 40px);
+    width: 100%;
     max-width: var(--content-width-standard);
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
 }
 
 .article-hero__image {
@@ -1235,6 +1235,10 @@ input[type=button],
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+}
+
+.article-hero__caption {
+    opacity: 0.625;
 }
 
 .article-meta {
