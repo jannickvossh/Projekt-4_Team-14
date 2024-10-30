@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
     
     const stories = document.querySelectorAll('.story');
+    const carousel = document.querySelector('.stories');
 
     let currentIndex = 0;
+    let interval;
 
     function showStory(index) {
         stories.forEach((story, i) => {
@@ -23,5 +25,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
         showStory(currentIndex);
     }
-    const interval = setInterval(nextStory, 3000);
+    function startCarousel() {
+    interval = setInterval(nextStory, 4000);
+    }
+
+    function stopCarousel() {
+    clearInterval(interval);
+    }
+
+    startCarousel();
+
+    carousel.addEventListener('mouseenter', stopCarousel);
+    carousel.addEventListener('mouseleave', startCarousel);
 });
