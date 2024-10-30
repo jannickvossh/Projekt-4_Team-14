@@ -1,0 +1,11 @@
+/* CSS to control which elements are displayed based on filter */
+
+/* Hides all elements by default*/
+.a--filterDiv {
+    display: none;
+}
+
+/* Displays chosen elements. */
+.a--show {
+    display:block;
+}
