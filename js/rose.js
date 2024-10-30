@@ -1,5 +1,5 @@
-const slideshow = document.querySelector('.slideshow'); 
-const slides = Array.from(document.querySelectorAll('.slide')); 
+const slideshow = document.querySelector('.r--slideshow'); 
+const slides = Array.from(document.querySelectorAll('.r--slide')); 
 const slidesPerGroup = 1;
 let memberSlideIndex = 0; 
 
