@@ -1,5 +1,5 @@
-const slideshow = document.querySelector('.r--slideshow'); 
-const slides = Array.from(document.querySelectorAll('.r--slide')); 
+const rSlideshow = document.querySelector('.r--slideshow'); 
+const rSlides = Array.from(document.querySelectorAll('.r--slide')); 
 const slidesPerGroup = 1;
 let memberSlideIndex = 0; 
 
@@ -7,8 +7,8 @@ let memberSlideIndex = 0;
 let autoSlideInterval = null;
 
 function scrollToCurrent() {
-    const slideWidth = slides[0].offsetWidth + 20;
-    slideshow.scrollTo({
+    const slideWidth = rSlides[0].offsetWidth + 20;
+    rSlideshow.scrollTo({
         left: memberSlideIndex * slideWidth,
         behavior: 'smooth'
     });
@@ -16,7 +16,7 @@ function scrollToCurrent() {
 
 function nextGroup() {
     memberSlideIndex += slidesPerGroup; 
-    if (memberSlideIndex >= slides.length) { 
+    if (memberSlideIndex >= rSlides.length) { 
         memberSlideIndex = 0;
     }
     scrollToCurrent(); 
@@ -35,7 +35,6 @@ function stopAutoSlide() {
 startAutoSlide();
 
 
-slideshow.addEventListener('mousedown', stopAutoSlide);
-slideshow.addEventListener('touchstart', stopAutoSlide);
-slideshow.addEventListener('mouseup', startAutoSlide);  
-slideshow.addEventListener('mouseleave', startAutoSlide); 
+rSlideshow.addEventListener('mouseover', stopAutoSlide);
+rSlideshow.addEventListener('mouseleave', startAutoSlide);
+rSlideshow.addEventListener('DOMContentLoaded', startAutoSlide);
