@@ -885,6 +885,23 @@ input[type=button],
     position: relative;
 }
 
+.n--carousel .story {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.n--carousel .story.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.n--carousel .story.exit {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
 .stories.layout-carousel .story {
     width: 350px;
     min-width: 350px;

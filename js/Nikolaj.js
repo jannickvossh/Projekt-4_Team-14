@@ -1,47 +1,27 @@
 document.addEventListener("DOMContentLoaded", function(){
-
-    const images = document.querySelectorAll('.story__img');
-
-    if (images.length === 0) {
-        console.log("Ingen billeder fundet i .story__img");
-        return;
-    }
     
+    const stories = document.querySelectorAll('.story');
+
     let currentIndex = 0;
-    
-    images[currentIndex].classList.add('active');
 
-    function showImage(index) {
-        images.forEach((img, i) => {
-            if (i === index) {
-                img.classList.add("active");
+    function showStory(index) {
+        stories.forEach((story, i) => {
+            if (i=== index) {
+                story.classList.add("active");
+                story.classList.remove("exit");
             } else {
-                img.classList.remove("active");
+                story.classList.remove("active");
+                story.classList.add("exit");
             }
-        })
+        });
     }
 
+    showStory(currentIndex);
 
-    function showImage(index) {
-        images.forEach((img, i) => {
-            if (i === index) {
-                img.style.display = "block";
-        } else {
-            img.style.display ="none";
-        }
-    });
- }
-    showImage(currentIndex);
+    function nextStory() {
+        currentIndex = (currentIndex + 1) % stories.length;
 
-    function nextImage() {
-        if (currentIndex >= images.length - 1) {
-            currentIndex = 0;
-    } else {
-        currentIndex++;
+        showStory(currentIndex);
     }
-    showImage(currentIndex);
-}
-const interval = setInterval(nextImage, 3000);
-
-})
-
+    const interval = setInterval(nextStory, 3000);
+});
