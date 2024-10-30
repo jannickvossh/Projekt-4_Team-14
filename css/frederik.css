@@ -1,0 +1,8 @@
+.f--big-story-wrapper {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.f--big-story-wrapper .big-story {
+    min-width: 100vw;
+}
