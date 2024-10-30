@@ -1,3 +1,4 @@
+@import url(/css/styles.css);
 .f--big-story-wrapper {
     display: flex;
     overflow: hidden;
@@ -15,6 +16,7 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  z-index: 100;
 }
 
 .f--dot {
@@ -22,7 +24,7 @@
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: var(--white);
     border-radius: 7.5px;
     display: inline-block;
     transition: background-color 0.6s ease;

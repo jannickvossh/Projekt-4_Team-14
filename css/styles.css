@@ -575,7 +575,7 @@ input[type=button],
     background-color: var(--white);
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 4;
 }
 
 .header-inner {
@@ -611,7 +611,7 @@ input[type=button],
     width: 100%;
     transform: translateX(100%);
     transition: var(--transition-standard);
-    z-index: 2;
+    z-index: 3;
     background-color: var(--white);
     display: flex;
     justify-content: center;
@@ -978,6 +978,7 @@ input[type=button],
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .big-story-content-inner {
@@ -998,6 +999,44 @@ input[type=button],
 .big-story__title {
     font-size: var(--font-size-huge);
 }
+
+.f--big-story-wrapper {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.f--big-story-wrapper .big-story {
+    min-width: 100vw;
+    transition: transform 0.6s ease-in-out;
+}
+
+.f--dot-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.f--dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--white);
+    border-radius: 7.5px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    transition-property: background-color, width;
+  }
+  
+  .f--active-dot, .f--dot:hover {
+    background-color: var(--black);
+    width: 30px;
+    border-radius: calc(15px / 2);
+  }
 
 /*
     ----------
@@ -1038,6 +1077,15 @@ input[type=button],
     transform: translateX(-20px);
     object-fit: cover;
     display: block;
+}
+
+/* Når #top-layer er til stede i DOM'en */
+#top-layer .card__image {
+    object-fit: contain;
+}
+
+.card__image-position {
+    object-position: 0 13.25%;
 }
 
 .card-content {

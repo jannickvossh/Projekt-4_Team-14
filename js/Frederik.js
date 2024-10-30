@@ -71,3 +71,7 @@ function insertTitles() {
 
 insertTitles(); 
 });
+
+//video fullscreen
+const video = document.querySelector('.card__image');
+
