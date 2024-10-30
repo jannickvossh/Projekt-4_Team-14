@@ -12,17 +12,17 @@ document.getElementById('article-filter__by-tags').addEventListener('change', fu
 // Function to filter elements based on user selection
 function filterSelection(c) {
     var c, i;
-    let x = document.getElementsByClassName("filterDiv");
+    let x = document.getElementsByClassName("a--filterDiv");
     
     if (c === "alle") c = ""; 
     
     for (i = 0; i < x.length; i++) {
-        removeShow(x[i], "show") // Remove "show" class initially
-            if (x[i].className.indexOf(c) > -1) addShow(x[i], "show") // Add "show" to matching items
+        removeShow(x[i], "a--show") // Remove "a--show" class initially
+            if (x[i].className.indexOf(c) > -1) addShow(x[i], "a--show") // Add "a--show" to matching items
     }
 }
 
-// Function that adds "show" class to selected elements, displaying them.
+// Function that adds "a--show" class to selected elements, displaying them.
 function addShow(element, name) {
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
@@ -33,7 +33,7 @@ function addShow(element, name) {
     }
 }
 
-// Function to remove "show" class from deselected elements.
+// Function to remove "a--show" class from deselected elements.
 function removeShow(element, name) {
     var i, arr1, arr2;
     arr1 = element.className.split(" ");
