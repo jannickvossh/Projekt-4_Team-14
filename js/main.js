@@ -32,3 +32,39 @@ if (document.querySelectorAll('.accordion').length > 0) {
         });
     }
 }
+
+/* Jannicks kode – Karrusel til udtalelser */
+
+if (document.querySelector('.j--carousel')) {
+    const testimonialCarousels = document.querySelectorAll('.j--carousel');
+    const paginationDots = document.querySelectorAll('.pagination-dot');
+
+    for (let i = 0; i < testimonialCarousels.length; i++) {
+        const testimonials = testimonialCarousels[i].querySelectorAll('.card');
+        let testimonialWidth = testimonials[0].getBoundingClientRect().width;
+        let testimonialGap = testimonials[1].getBoundingClientRect().x - testimonials[0].getBoundingClientRect().x - testimonialWidth;
+        let carouselWidth = testimonialWidth * testimonials.length + testimonialGap * (testimonials.length - 1);
+        let carouselInView = testimonialCarousels[0].getBoundingClientRect().width;
+        let carouselPos = testimonialCarousels[0].getBoundingClientRect().x
+        let testimonialsCurrentPos = 0;
+
+        for (let j = 0; j < paginationDots.length; j++) {
+            paginationDots[j].addEventListener('click', () => {
+                paginationDots.forEach((dot) => {
+                    dot.classList.remove('pagination-dot--active');
+                });
+                paginationDots[j].classList.add('pagination-dot--active');
+
+                testimonialsCurrentPos = (testimonialWidth + testimonialGap) * j;
+
+                testimonials.forEach((testimonial) => {
+                    if (testimonials[testimonials.length - 1].getBoundingClientRect().x + testimonials[testimonials.length - 1].getBoundingClientRect().width < carouselInView) {
+                        testimonial.style.transform = "translateX(-" + (carouselWidth - carouselInView) + "px)";
+                    } else {
+                        testimonial.style.transform = "translateX(-" + testimonialsCurrentPos + "px)";
+                    }
+                });
+            });
+        }
+    }
+}

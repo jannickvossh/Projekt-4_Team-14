@@ -1534,3 +1534,43 @@ input[type=button],
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+/*
+    ----------
+    Styling til Jannicks karrusel med udtalelser
+    ----------
+*/
+
+.j--carousel {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.j--carousel .card {
+    transition: transform var(--transition-standard);
+}
+
+.j--carousel .pagination-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.j--carousel .pagination-dot {
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background-color: var(--orange);
+    opacity: 0.3;
+    transition: width var(--transition-standard);
+    transition-property: width, opacity;
+}
+
+.j--carousel .pagination-dot--active {
+    opacity: 1;
+    width: 50px;
+}
