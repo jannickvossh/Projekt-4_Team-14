@@ -55,12 +55,12 @@ function advanceCarousel(pagination, carousel, items) {
     let carouselInView = carousel[0].getBoundingClientRect().width;
     let itemsCurrentPos = 0;
 
-    for (let j = 0; j < pagination.length; j++) {
-        pagination[j].addEventListener('click', () => {
+    for (let i = 0; i < pagination.length; i++) {
+        pagination[i].addEventListener('click', () => {
             pagination.forEach((dot) => {
                 dot.classList.remove('pagination-dot--active');
             });
-            pagination[j].classList.add('pagination-dot--active');
+            pagination[i].classList.add('pagination-dot--active');
 
             itemsCurrentPos = (itemWidth + itemGap) * j;
 
