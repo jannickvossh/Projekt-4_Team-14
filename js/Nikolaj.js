@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
     
-    const stories = document.querySelectorAll('.story');
+    const storiesArray = Array.from (document.getElementsByClassName('story'));
     const carousel = document.querySelector('.stories');
 
     let currentIndex = 0;
     let interval;
 
     function showStory(index) {
-        stories.forEach((story, i) => {
+        storiesArray.forEach((story, i) => {
             if (i=== index) {
                 story.classList.add("active");
                 story.classList.remove("exit");
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function(){
     showStory(currentIndex);
 
     function nextStory() {
-        currentIndex = (currentIndex + 1) % stories.length;
+        currentIndex = (currentIndex + 1) % storiesArray.length;
 
         showStory(currentIndex);
     }
