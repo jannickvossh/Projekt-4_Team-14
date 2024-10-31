@@ -1541,7 +1541,7 @@ input[type=button],
 */
 
 .n--section .content-box {
-    width: 100%;
+    width: calc(100% - 40px);
 }
 
 .n--carousel {
