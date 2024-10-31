@@ -1540,15 +1540,21 @@ input[type=button],
     ----------
 */
 
-.n--carousel {
-    overflow-x: hidden;
+.n--section .content-box {
+    width: 100%;
 }
 
-.n--carousel .story {
+.n--carousel {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.stories.n--carousel .story {
     position: absolute;
     opacity: 0;
     transform: translateX(100%);
     transition: transform 1s ease, opacity 1s ease;
+    width: 100%;
 }
 
 .n--carousel .story.active {
