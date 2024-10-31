@@ -162,6 +162,10 @@ a {
     list-style: none;
 }
 
+.regular-ul:has(+ *) {
+    margin-bottom: 2em;
+}
+
 .regular-ul li {
     position: relative;
     left: calc(20px + 1ch);
@@ -422,7 +426,7 @@ input[type=button],
     height: 100%;
     width: 100%;
     z-index: 1;
-    opacity: 0.325;
+    opacity: 0.5;
 }
 
 .overlay--black {
@@ -527,7 +531,7 @@ input[type=button],
 .layout-carousel {
     display: flex;
     gap: 20px;
-    overflow-x: scroll;
+    overflow: hidden;
     scroll-snap-type: x mandatory;
 }
 
