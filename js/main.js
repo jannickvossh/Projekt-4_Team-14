@@ -53,7 +53,7 @@ function advanceCarousel(pagination, carousel, items) {
     let itemGap = items[1].getBoundingClientRect().x - items[0].getBoundingClientRect().x - itemWidth;
     let carouselWidth = itemWidth * items.length + itemGap * (items.length - 1);
     let carouselInView = carousel[0].getBoundingClientRect().width;
-    let itemsCurrentPos = 0;
+    let lastItemEnd = items[items.length - 1].getBoundingClientRect().x + itemWidth - carousel[0].getBoundingClientRect().x;
 
     for (let i = 0; i < pagination.length; i++) {
         pagination[i].addEventListener('click', () => {
@@ -62,13 +62,11 @@ function advanceCarousel(pagination, carousel, items) {
             });
             pagination[i].classList.add('pagination-dot--active');
 
-            itemsCurrentPos = (itemWidth + itemGap) * i;
-
             items.forEach((item) => {
-                if (items[items.length - 1].getBoundingClientRect().x + items[items.length - 1].getBoundingClientRect().width < carouselInView) {
+                if ((itemWidth + itemGap) * i + carouselInView >= lastItemEnd) {
                     item.style.transform = "translateX(-" + (carouselWidth - carouselInView) + "px)";
                 } else {
-                    item.style.transform = "translateX(-" + itemsCurrentPos + "px)";
+                    item.style.transform = "translateX(-" + (itemWidth + itemGap) * i + "px)";
                 }
             });
         });
