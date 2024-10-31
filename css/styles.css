@@ -896,6 +896,10 @@ input[type=button],
     scroll-snap-align: start;
 }
 
+.stories.layout-grid .story {
+    height: 350px;
+}
+
 .story__img {
     position: absolute;
     top: 0;
@@ -1201,6 +1205,12 @@ input[type=button],
     width: 100%;
     max-width: 1000px;
     object-fit: cover;
+}
+
+.content-box + .image--contain {
+    object-fit: contain;
+    height: auto;
+    max-height: 450px;
 }
 
 .section:nth-child(odd) .content-box + img,
@@ -1509,29 +1519,33 @@ input[type=button],
 
 .f--dot-pagination {
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
-    z-index: 2;
+    display: flex;
+    gap: 10px;
+    z-index: 3;
 }
 
 .f--dot {
+    height: 16px;
+    width: 16px;
+    border-radius: 8px;
+    background-color: var(--orange);
+    opacity: 0.3;
+    transition: width var(--transition-standard);
+    transition-property: width, opacity;
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: var(--white);
-    border-radius: 7.5px;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    transition-property: background-color, width;
 }
 
-.f--active-dot, .f--dot:hover {
-    background-color: var(--black);
-    width: 30px;
-    border-radius: calc(15px / 2);
+.f--active-dot {
+    opacity: 1;
+    width: 50px;
+}
+
+.f--dot:not(.f--active-dot):hover {
+    opacity: 0.7;
+    width: 25px;
 }
 
 /*
@@ -1653,4 +1667,9 @@ input[type=button],
 .j--carousel .pagination-dot--active {
     opacity: 1;
     width: 50px;
+}
+
+.j--carousel .pagination-dot:not(.pagination-dot--active):hover {
+    opacity: 0.7;
+    width: 25px;
 }
