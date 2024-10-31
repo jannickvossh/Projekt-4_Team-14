@@ -616,7 +616,7 @@ input[type=button],
     width: 100%;
     transform: translateX(100%);
     transition: var(--transition-standard);
-    z-index: 3;
+    z-index: 4;
     background-color: var(--white);
     display: flex;
     justify-content: center;
@@ -976,7 +976,12 @@ input[type=button],
 }
 
 .big-story__tag:has(+ *) {
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.big-story__date {
+    font-size: var(--font-size-small);
+    margin: 0 0 0.325em;
 }
 
 .big-story__title,
