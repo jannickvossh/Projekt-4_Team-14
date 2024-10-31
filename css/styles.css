@@ -1205,6 +1205,7 @@ input[type=button],
 }
 
 .content-box + img,
+.content-box + video,
 .content-box + .stories,
 .content-box + .cards {
     position: relative;
@@ -1212,10 +1213,20 @@ input[type=button],
     left: 20px;
 }
 
-.content-box + img {
-    height: 250px;
+.content-box + img,
+.content-box + video {
     width: 100%;
     max-width: 1000px;
+}
+
+.content-box + img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.content-box + video {
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -1226,6 +1237,7 @@ input[type=button],
 }
 
 .section:nth-child(odd) .content-box + img,
+.section:nth-child(odd) .content-box + video,
 .section:nth-child(odd) .content-box + .stories,
 .section:nth-child(odd) .content-box + .cards {
     left: auto;
@@ -1244,12 +1256,14 @@ input[type=button],
     }
 
     .content-box + img,
+    .content-box + video,
     .content-box + .stories,
     .content-box + .cards {
         left: 30px;
     }
 
     .section:nth-child(odd) .content-box + img,
+    .section:nth-child(odd) .content-box + video,
     .section:nth-child(odd) .content-box + .stories,
     .section:nth-child(odd) .content-box + .cards {
         right: 30px;
@@ -1259,6 +1273,7 @@ input[type=button],
 @media screen and (min-width: 840px) {
 
     .section.section--has-background:has(.content-box):has(.content-box + img),
+    .section.section--has-background:has(.content-box):has(.content-box + video),
     .section.section--has-background:has(.content-box):has(.content-box + .stories),
     .section.section--has-background:has(.content-box):has(.content-box + .cards) {
         padding-bottom: 70px;
@@ -1282,6 +1297,7 @@ input[type=button],
     }
 
     .content-box + img,
+    .content-box + video,
     .content-box + .stories,
     .content-box + .cards {
         top: 30px;
@@ -1294,6 +1310,7 @@ input[type=button],
     }
     
     .section:nth-child(odd) .content-box + img,
+    .section:nth-child(odd) .content-box + video,
     .section:nth-child(odd) .content-box + .stories,
     .section:nth-child(odd) .content-box + .cards {
         left: 30px;
