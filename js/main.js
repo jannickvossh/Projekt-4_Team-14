@@ -41,29 +41,34 @@ if (document.querySelector('.j--carousel')) {
 
     for (let i = 0; i < testimonialCarousels.length; i++) {
         const testimonials = testimonialCarousels[i].querySelectorAll('.card');
-        let testimonialWidth = testimonials[0].getBoundingClientRect().width;
-        let testimonialGap = testimonials[1].getBoundingClientRect().x - testimonials[0].getBoundingClientRect().x - testimonialWidth;
-        let carouselWidth = testimonialWidth * testimonials.length + testimonialGap * (testimonials.length - 1);
-        let carouselInView = testimonialCarousels[0].getBoundingClientRect().width;
-        let testimonialsCurrentPos = 0;
 
-        for (let j = 0; j < paginationDots.length; j++) {
-            paginationDots[j].addEventListener('click', () => {
-                paginationDots.forEach((dot) => {
-                    dot.classList.remove('pagination-dot--active');
-                });
-                paginationDots[j].classList.add('pagination-dot--active');
+        advanceCarousel(paginationDots, testimonialCarousels, testimonials);
+    }
+}
 
-                testimonialsCurrentPos = (testimonialWidth + testimonialGap) * j;
+function advanceCarousel(pagination, carousel, items) {
+    let itemWidth = items[0].getBoundingClientRect().width;
+    let itemGap = items[1].getBoundingClientRect().x - items[0].getBoundingClientRect().x - itemWidth;
+    let carouselWidth = itemWidth * items.length + itemGap * (items.length - 1);
+    let carouselInView = carousel[0].getBoundingClientRect().width;
+    let itemsCurrentPos = 0;
 
-                testimonials.forEach((testimonial) => {
-                    if (testimonials[testimonials.length - 1].getBoundingClientRect().x + testimonials[testimonials.length - 1].getBoundingClientRect().width < carouselInView) {
-                        testimonial.style.transform = "translateX(-" + (carouselWidth - carouselInView) + "px)";
-                    } else {
-                        testimonial.style.transform = "translateX(-" + testimonialsCurrentPos + "px)";
-                    }
-                });
+    for (let j = 0; j < pagination.length; j++) {
+        pagination[j].addEventListener('click', () => {
+            pagination.forEach((dot) => {
+                dot.classList.remove('pagination-dot--active');
             });
-        }
+            pagination[j].classList.add('pagination-dot--active');
+
+            itemsCurrentPos = (itemWidth + itemGap) * j;
+
+            items.forEach((item) => {
+                if (items[items.length - 1].getBoundingClientRect().x + items[items.length - 1].getBoundingClientRect().width < carouselInView) {
+                    item.style.transform = "translateX(-" + (carouselWidth - carouselInView) + "px)";
+                } else {
+                    item.style.transform = "translateX(-" + itemsCurrentPos + "px)";
+                }
+            });
+        });
     }
 }
