@@ -62,7 +62,7 @@ function advanceCarousel(pagination, carousel, items) {
             });
             pagination[i].classList.add('pagination-dot--active');
 
-            itemsCurrentPos = (itemWidth + itemGap) * j;
+            itemsCurrentPos = (itemWidth + itemGap) * i;
 
             items.forEach((item) => {
                 if (items[items.length - 1].getBoundingClientRect().x + items[items.length - 1].getBoundingClientRect().width < carouselInView) {
