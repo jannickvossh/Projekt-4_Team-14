@@ -950,7 +950,7 @@ input[type=button],
 
 .big-story {
     position: relative;
-    height: 400px;
+    height: 550px;
 }
 
 .big-story__image {
@@ -995,6 +995,13 @@ input[type=button],
 
 .big-story__title {
     font-size: var(--font-size-huge);
+}
+
+@media screen and (min-width: 600px) {
+
+    .big-story {
+        height: 400px;
+    }
 }
 
 /*
