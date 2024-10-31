@@ -16,6 +16,7 @@ mobileNavClose.addEventListener('click', () => {
     }
 });
 
+
 /* Funktionalitet til accordions */
 
 let accordions;
@@ -32,6 +33,7 @@ if (document.querySelectorAll('.accordion').length > 0) {
         });
     }
 }
+
 
 /* Jannicks kode – Karrusel til udtalelser */
 
