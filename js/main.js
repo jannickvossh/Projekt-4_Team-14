@@ -45,7 +45,6 @@ if (document.querySelector('.j--carousel')) {
         let testimonialGap = testimonials[1].getBoundingClientRect().x - testimonials[0].getBoundingClientRect().x - testimonialWidth;
         let carouselWidth = testimonialWidth * testimonials.length + testimonialGap * (testimonials.length - 1);
         let carouselInView = testimonialCarousels[0].getBoundingClientRect().width;
-        let carouselPos = testimonialCarousels[0].getBoundingClientRect().x
         let testimonialsCurrentPos = 0;
 
         for (let j = 0; j < paginationDots.length; j++) {
